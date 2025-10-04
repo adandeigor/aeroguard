@@ -1,10 +1,22 @@
 // components/LiveStatsSection.tsx
-'use client';
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Sun, Cloud, Thermometer, Droplets, Smile, Frown } from 'lucide-react';
-import { AirQualityData, WeatherData, mockAirData, mockWeatherData, generateRecommendations } from '@/types/air';
+"use client";
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Sun, Cloud, Thermometer, Droplets, Smile, Frown } from "lucide-react";
+import {
+  AirQualityData,
+  WeatherData,
+  mockAirData,
+  mockWeatherData,
+  generateRecommendations,
+} from "@/types/air";
 
 export default function LiveStatsSection() {
   const [airData, setAirData] = useState<AirQualityData>(mockAirData);
@@ -13,7 +25,7 @@ export default function LiveStatsSection() {
   useEffect(() => {
     // Simulate geolocation fetch – in real: navigator.geolocation.getCurrentPosition()
     const timer = setTimeout(() => {
-      setAirData(mockAirData);  // Static mock for hack demo
+      setAirData(mockAirData); // Static mock for hack demo
       setWeatherData(mockWeatherData);
     }, 500);
 
@@ -21,13 +33,18 @@ export default function LiveStatsSection() {
   }, []);
 
   const getAQIColor = (aqi: number): string => {
-    if (aqi < 50) return 'bg-green-500';  // Good: green
-    if (aqi < 100) return 'bg-yellow-500';  // Moderate: yellow
-    if (aqi < 150) return 'bg-orange-500';  // Unhealthy sensitive: orange
-    return 'bg-red-500';  // Unhealthy+: red
+    if (aqi < 50) return "bg-green-500"; // Good: green
+    if (aqi < 100) return "bg-yellow-500"; // Moderate: yellow
+    if (aqi < 150) return "bg-orange-500"; // Unhealthy sensitive: orange
+    return "bg-red-500"; // Unhealthy+: red
   };
 
-  const getAQIEmoji = (aqi: number) => aqi < 50 ? <Smile className="h-6 w-6 text-green-500" /> : <Frown className="h-6 w-6 text-red-500" />;
+  const getAQIEmoji = (aqi: number) =>
+    aqi < 50 ? (
+      <Smile className="h-6 w-6 text-green-500" />
+    ) : (
+      <Frown className="h-6 w-6 text-red-500" />
+    );
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
