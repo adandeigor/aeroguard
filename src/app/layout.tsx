@@ -30,7 +30,7 @@ export default function RootLayout({
             lang="en"
             className={`${rosnoc.variable} ${satoshi.variable} antialiased`}
         >
-            <body className="font-satoshi bg-sky-50">
+            <body className="font-satoshi bg-white">
                 <Header/>
                 {children}
             </body>
