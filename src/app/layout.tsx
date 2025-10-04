@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Header } from "@/components/navigation/header";
 
 const rosnoc = localFont({
     src: "./fonts/rosnoc.woff2",
@@ -29,7 +30,8 @@ export default function RootLayout({
             lang="en"
             className={`${rosnoc.variable} ${satoshi.variable} antialiased`}
         >
-            <body className="font-satoshi bg-sky-50 flex justify-center items-center">
+            <body className="font-satoshi bg-sky-50">
+                <Header/>
                 {children}
             </body>
         </html>
