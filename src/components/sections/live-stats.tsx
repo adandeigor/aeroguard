@@ -5,30 +5,21 @@ import { AirQualityData, WeatherData } from './live-stats/types';
 import { AQICard } from './live-stats/AQICard';
 import { WeatherCard } from './live-stats/WeatherCard';
 import { DetailsCard } from './live-stats/DetailsCard';
-
-// Mock data (will be replaced with real API calls)
-const mockAirData: AirQualityData = {
-  location: "Cotonou, Benin",
-  aqi: 45,
-  pm25: 12.5,
-  timestamp: new Date(),
-};
-
-const mockWeatherData: WeatherData = {
-  temperature: 28,
-  humidity: 76,
-  condition: "Partly Cloudy",
-};
+import { AlertCard } from './alerts/AlertCard';
+import { AlertData } from './alerts/types';
+import { mockAirData, mockWeatherData, mockAlertDataSafe } from '@/lib/mockData';
 
 export default function LiveStatsSection() {
   const [airData, setAirData] = useState<AirQualityData>(mockAirData);
   const [weatherData, setWeatherData] = useState<WeatherData>(mockWeatherData);
+  const [alertData, setAlertData] = useState<AlertData>(mockAlertDataSafe);
 
   useEffect(() => {
     // Simulate geolocation fetch – in real: navigator.geolocation.getCurrentPosition()
     const timer = setTimeout(() => {
       setAirData(mockAirData);
       setWeatherData(mockWeatherData);
+      setAlertData(mockAlertDataSafe);
     }, 500);
 
     return () => clearTimeout(timer);
@@ -36,9 +27,10 @@ export default function LiveStatsSection() {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
         <AQICard data={airData} />
         <WeatherCard data={weatherData} location={airData.location} />
+        <AlertCard data={alertData} location={airData.location} />
       </div>
       <div className="w-full">
         <DetailsCard data={airData} />
