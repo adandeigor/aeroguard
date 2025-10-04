@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/navigation/header";
+import { Footer } from "@/components/navigation/footer";
 
 const rosnoc = localFont({
     src: "./fonts/rosnoc.woff2",
@@ -32,14 +33,16 @@ export default function RootLayout({
             className={`${rosnoc.variable} ${satoshi.variable} antialiased`}
             suppressHydrationWarning
         >
-            <body className="font-satoshi bg-sky-50 flex justify-center items-center">
+            <body className="font-satoshi">
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="light"
                     enableSystem
                     disableTransitionOnChange
                 >
+                    <Header />
                     {children}
+                    <Footer /> 
                 </ThemeProvider>
             </body>
         </html>
