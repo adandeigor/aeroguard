@@ -7,7 +7,7 @@ interface SplashScreenProps {
     onFinish?: () => void;
 }
 
-const title = "AEROGUARD";
+const title = "aeroguard";
 
 export default function SplashScreen({ onFinish }: SplashScreenProps) {
     const [visible, setVisible] = useState(true);
