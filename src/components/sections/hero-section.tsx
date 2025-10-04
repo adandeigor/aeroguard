@@ -1,7 +1,7 @@
 // components/HeroSection.tsx
 import { Suspense } from 'react';
 import LiveStatsSection from './live-stats';
-import GlobeView from './globe';
+import GlobeViewComponent from './globe';
 
 export default function HeroSection() {
   return (
@@ -11,7 +11,7 @@ export default function HeroSection() {
           <LiveStatsSection />
         </Suspense>
         <Suspense fallback={<div className="text-center text-sky-600">Loading globe...</div>}>
-          <GlobeView />
+          <GlobeViewComponent />
         </Suspense>
       </div>
     </section>
