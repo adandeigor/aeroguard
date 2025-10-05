@@ -18,7 +18,6 @@ export default function Home() {
             {/* Contenu principal */}
             {!loading && (
                 <main className="min-h-screen">
-                    <HeroSection />
                     <StatsSection />
                     <TrendsMainSection />
                     <DemoSection />
