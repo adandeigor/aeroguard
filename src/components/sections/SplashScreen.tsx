@@ -36,7 +36,7 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
             {/* Logo + concepteur */}
             <div className="absolute bottom-8 flex justify-center items-center gap-2">
                 <Image
-                    src="/CodeXplore.png"
+                    src="/CodeXploreBlanc.png"
                     alt="Logo AEROGUARD"
                     width={30}
                     height={30}

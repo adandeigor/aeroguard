@@ -30,7 +30,7 @@ export function Header() {
         <header className="w-full p-4 bg-sky-50/80 backdrop-blur-sm shadow-md sticky top-0 z-50 border-b border-sky-200/50">
             {/* Logo/Title – center on mobile, right on desktop */}
             <div className="flex items-center justify-between">
-                <h1 className="font-rosnoc text-xl md:text-4xl text-sky-950 font-bold">
+                <h1 className="font-rosnoc text-xl md:text-2xl text-sky-950">
                     <Link href="/">aeroguard</Link>{" "}
                     {/* Lien pour scroll smooth */}
                 </h1>
