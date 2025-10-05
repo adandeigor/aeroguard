@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/navigation/header";
 import { Footer } from "@/components/navigation/footer";
+import { Toaster } from "sonner";
 
 const rosnoc = localFont({
     src: "./fonts/rosnoc.woff2",
@@ -42,7 +43,13 @@ export default function RootLayout({
                 >
                     <Header />
                     {children}
-                    <Footer /> 
+                    <Footer />
+                    <Toaster 
+                        position="top-right"
+                        expand={true}
+                        richColors
+                        closeButton
+                    />
                 </ThemeProvider>
             </body>
         </html>
