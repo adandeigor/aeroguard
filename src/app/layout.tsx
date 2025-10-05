@@ -31,7 +31,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`${rosnoc.variable} ${satoshi.variable} antialiased`}
+            className={`${rosnoc.variable} ${satoshi.variable} antialiased scroll-smooth`}
             suppressHydrationWarning
         >
             <body className="font-satoshi">
