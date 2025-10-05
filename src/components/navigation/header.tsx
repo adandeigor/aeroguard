@@ -9,7 +9,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"; // Shadcn Drawer pour mobile
-import { Menu, X, Search } from "lucide-react"; // Icônes Lucide (npm i lucide-react si pas installé)
+import { Menu, X } from "lucide-react"; // Icônes Lucide (npm i lucide-react si pas installé)
 import { useState } from "react"; // Pour toggle menu (client-side ici pour interraction)
 import { CountryCityAlertDialog } from "@/components/sections/CountryCityAlertDialog";
 

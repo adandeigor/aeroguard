@@ -26,7 +26,7 @@ export default function LiveStatsSection() {
   }, []);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4">
+    <div className="w-full max-w-5xl mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <div className="aqi-card">
           <AQICard data={airData} />

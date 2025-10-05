@@ -201,7 +201,7 @@ export function CountryCityAlertDialog({ onLocationSelect }: CountryCityAlertDia
 
     return (
         <AlertDialog>
-            <AlertDialogTrigger>
+            <AlertDialogTrigger className="cursor-pointer">
                 <Search className="h-4 w-4 text-sky-800" />
             </AlertDialogTrigger>
             <AlertDialogContent className="bg-gradient-to-br from-sky-100/90 to-sky-50/80 backdrop-blur-xl border-2 border-sky-200/60 rounded-2xl">

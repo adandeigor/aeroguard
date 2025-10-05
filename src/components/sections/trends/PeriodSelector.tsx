@@ -14,7 +14,7 @@ export const PeriodSelector: React.FC<PeriodSelectorProps> = ({ selected, onChan
   ];
 
   return (
-    <div className="flex gap-2 p-1 bg-sky-100/60 rounded-xl shadow-[inset_2px_2px_6px_rgba(2,132,199,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
+    <div className="flex w-fit gap-2 p-1 bg-sky-100/60 rounded-xl shadow-[inset_2px_2px_6px_rgba(2,132,199,0.1),inset_-2px_-2px_4px_rgba(255,255,255,0.6)]">
       {periods.map((period) => (
         <button
           key={period.value}
