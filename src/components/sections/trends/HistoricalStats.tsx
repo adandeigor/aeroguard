@@ -37,8 +37,8 @@ export const HistoricalStats: React.FC<HistoricalStatsProps> = ({ data }) => {
       <div className="absolute inset-[1px] rounded-2xl shadow-[inset_2px_2px_8px_rgba(2,132,199,0.1),inset_-2px_-2px_8px_rgba(255,255,255,0.5)]" />
       <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-2xl" />
       
-      <CardContent className="p-6 relative z-10">
-        <div className="flex items-center justify-between mb-3">
+      <CardContent className="px-4 lg:px-6 relative z-10">
+        <div className="flex items-center justify-between mb-6">
           <div className={`p-3 ${color} rounded-full shadow-[3px_3px_10px_rgba(2,132,199,0.15),-3px_-3px_10px_rgba(255,255,255,0.8)]`}>
             <Icon className="h-6 w-6 text-white" />
           </div>
@@ -51,7 +51,7 @@ export const HistoricalStats: React.FC<HistoricalStatsProps> = ({ data }) => {
   );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
       <StatCard
         icon={Calendar}
         title="Average AQI"

@@ -26,16 +26,14 @@ export default function LiveStatsSection() {
   }, []);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4">
+    <div className="w-full max-w-5xl mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <AQICard data={airData} />
         <WeatherCard data={weatherData} location={airData.location} />
       </div>
-      <div className="w-full mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
       <AlertCard data={alertData} location={airData.location} />
-      </div>
-      <div className="w-full">
-        <DetailsCard data={airData} />
+      <DetailsCard data={airData} />
       </div>
     </div>
   );
