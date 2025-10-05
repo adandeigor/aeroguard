@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CountryCityAlertDialog, LocationData } from "./CountryCityAlertDialog";
 
 /**
@@ -100,9 +101,9 @@ export function WeatherExample() {
  * Exemple avec gestion d'état React
  */
 export function StatefulExample() {
-    const [weatherData, setWeatherData] = React.useState<any>(null);
-    const [loading, setLoading] = React.useState(false);
-    const [error, setError] = React.useState("");
+    const [weatherData, setWeatherData] = useState<any>(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
 
     const handleLocationSelect = async (location: LocationData) => {
         setLoading(true);
