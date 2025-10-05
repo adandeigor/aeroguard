@@ -5,7 +5,7 @@ import LiveStatsSection from './live-stats';
 
 export default function StatsSection() {
   return (
-    <section className="w-full bg-gradient-to-br from-sky-50 to-sky-100 py-12 px-4">
+    <section className="w-full bg-gradient-to-br from-sky-50 to-sky-100 py-12 px-4" id="previsions">
       <div className="container mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold font-rosnoc text-sky-900 mb-2">

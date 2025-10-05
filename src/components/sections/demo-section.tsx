@@ -11,7 +11,7 @@ export default function DemoSection() {
   const currentLocation = mockLocationsData[selectedLocation];
 
   return (
-    <section className="w-full bg-gradient-to-br from-purple-50 to-pink-50 py-12 px-4">
+    <section className="w-full bg-gradient-to-br from-purple-50 to-pink-50 py-12 px-4" id="demo">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-2">
@@ -46,7 +46,7 @@ export default function DemoSection() {
         </div>
 
         {/* Stats Display */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
           <Card className="bg-white/80 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-purple-900">AQI Level</CardTitle>
@@ -57,20 +57,20 @@ export default function DemoSection() {
           </Card>
           <Card className="bg-white/80 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-purple-900">PM2.5</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-4xl font-bold text-purple-600">{currentLocation.pm25} µg/m³</p>
-            </CardContent>
-          </Card>
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardHeader>
               <CardTitle className="text-purple-900">Alert Status</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-2xl font-bold text-purple-600">
                 {currentLocation.alert.alert ? "⚠️ Active" : "✅ Safe"}
               </p>
+            </CardContent>
+          </Card>
+          <Card className="col-span-2 bg-white/80 backdrop-blur-sm">
+            <CardHeader>
+              <CardTitle className="text-purple-900">PM2.5</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-4xl font-bold text-purple-600">{currentLocation.pm25} µg/m³</p>
             </CardContent>
           </Card>
         </div>
