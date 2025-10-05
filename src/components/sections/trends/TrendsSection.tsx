@@ -22,12 +22,18 @@ export default function TrendsSection() {
     <div className="w-full max-w-7xl mx-auto px-4 space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-sky-900">Historical Trends</h2>
-        <PeriodSelector selected={selectedPeriod} onChange={handlePeriodChange} />
+        <div className="period-selector">
+          <PeriodSelector selected={selectedPeriod} onChange={handlePeriodChange} />
+        </div>
       </div>
       
-      <TrendsChart data={historicalData} period={selectedPeriod} />
+      <div className="trends-chart">
+        <TrendsChart data={historicalData} period={selectedPeriod} />
+      </div>
       
-      <HistoricalStats data={historicalData} />
+      <div className="historical-stats">
+        <HistoricalStats data={historicalData} />
+      </div>
     </div>
   );
 }
