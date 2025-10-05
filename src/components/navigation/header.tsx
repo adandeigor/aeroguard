@@ -12,7 +12,6 @@ import {
 import { Menu, X, Search } from "lucide-react"; // Icônes Lucide (npm i lucide-react si pas installé)
 import { useState } from "react"; // Pour toggle menu (client-side ici pour interraction)
 import { CountryCityAlertDialog } from "@/components/sections/CountryCityAlertDialog";
-import MascotScene from "../sections/MascotScene";
 
 interface NavLink {
     label: string;
@@ -20,10 +19,8 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-    { label: "Home", href: "#hero" },
-    { label: "Globe", href: "#globe" },
-    { label: "Graphiques", href: "#graphiques" },
-    { label: "Previsions", href: "#previsions" },
+    { label: "Home", href: "/" },
+    { label: "Learn", href: "/learn" },
 ];
 
 export function Header() {
@@ -39,7 +36,7 @@ export function Header() {
                 </h1>
 
                 {/* Menu Desktop : Horizontal */}
-                <div className="flex items-center">
+                <div className="flex items-center gap-6 ">
                     <nav className="hidden md:flex space-x-6">
                         {navLinks.map((link) => (
                             <Button
