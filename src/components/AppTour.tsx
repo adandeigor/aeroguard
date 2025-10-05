@@ -188,6 +188,11 @@ export default function AppTour({ run = false, onComplete }: AppTourProps) {
   const [runTour, setRunTour] = useState(false);
 
   useEffect(() => {
+    // Don't run tour on /learn page
+    if (typeof window !== 'undefined' && window.location.pathname === '/learn') {
+      return;
+    }
+    
     // Check if user has seen the tour before
     const hasSeenTour = localStorage.getItem('aeroguard-tour-completed');
     if (!hasSeenTour && run) {

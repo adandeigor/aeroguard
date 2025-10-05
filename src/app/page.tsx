@@ -7,6 +7,7 @@ import TrendsMainSection from "@/components/sections/trends-section";
 import GlobeSection from "@/components/sections/globe-section";
 import DemoSection from "@/components/sections/demo-section";
 import AppTour from "@/components/AppTour";
+import HelpButton from "@/components/HelpButton";
 
 export default function Home() {
     const [loading, setLoading] = useState(true);
@@ -14,6 +15,11 @@ export default function Home() {
 
     const handleSplashFinish = () => {
         setLoading(false);
+        setStartTour(true);
+    };
+
+    const handleRestartTour = () => {
+        localStorage.removeItem('aeroguard-tour-completed');
         setStartTour(true);
     };
 
@@ -32,6 +38,7 @@ export default function Home() {
                         <GlobeSection />
                     </main>
                     <AppTour run={startTour} onComplete={() => setStartTour(false)} />
+                    <HelpButton onRestartTour={handleRestartTour} />
                 </>
             )}
         </>

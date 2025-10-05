@@ -19,10 +19,8 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-    { label: "Previsions", href: "#previsions" },
-    { label: "Historique", href: "#history" },
-    { label: "Demo", href: "#demo" },
-    { label: "Globe", href: "#globe" },
+    { label: "Home", href: "/" },
+    { label: "Learn", href: "/learn" },
 ];
 
 export function Header() {
@@ -38,7 +36,7 @@ export function Header() {
                 </h1>
 
                 {/* Menu Desktop : Horizontal */}
-                <div className="flex items-center gap-x-2">
+                <div className="flex items-center gap-6 ">
                     <nav className="hidden md:flex space-x-6">
                         {navLinks.map((link) => (
                             <Button
